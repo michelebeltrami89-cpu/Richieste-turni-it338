@@ -734,7 +734,9 @@
           const res = await fetch(GOOGLE_SCRIPT_URL);
           if (!res.ok) return;
           const rows = await res.json();
-          const list = Array.isArray(rows) ? rows : (Array.isArray(rows.data) ? rows.data : []);
+          const list = Array.isArray(rows)
+            ? rows
+            : (Array.isArray(rows.requests) ? rows.requests : (Array.isArray(rows.data) ? rows.data : []));
           if (!list.length) return;
 
           const mapped = list
