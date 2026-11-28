@@ -139,7 +139,6 @@
     <!-- 2. AREA OPERATIVA A STEP (OPERATORI A-Z -> DATA E ORARIO)          -->
     <!-- =================================================================== -->
     <section id="operator-workspace" class="no-print bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-      <!-- Stato iniziale quando nessuna delle 3 azioni in alto è attiva -->
       <div id="workspace-idle-prompt" class="p-6 sm:p-8 text-center bg-slate-50/80">
         <p class="text-sm sm:text-base font-extrabold text-slate-800">
           Seleziona un'azione in alto per iniziare
@@ -149,7 +148,6 @@
         </p>
       </div>
 
-      <!-- Pannello attivo dopo il clic su una delle 3 azioni -->
       <div id="workspace-active-panel" class="hidden">
         <div id="workspace-banner" class="px-5 py-4 bg-indigo-50/80 border-b border-indigo-100 flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -175,7 +173,6 @@
         </div>
 
         <div class="p-5 space-y-6">
-          <!-- STEP 1: ELENCO DI TUTTI I 12 OPERATORI (A-Z PER COGNOME) -->
           <div id="step-operator-container">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
               <label class="text-xs font-extrabold uppercase tracking-wider text-slate-600 flex items-center gap-2">
@@ -188,7 +185,6 @@
             <div id="operators-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5"></div>
           </div>
 
-          <!-- ELENCO RICHIESTE SALVATE PER MODIFICA / CANCELLA (APPARE DOPO AVER SCELTO L'OPERATORE) -->
           <div id="existing-requests-picker" class="hidden pt-4 border-t border-slate-200 space-y-3">
             <label id="existing-picker-heading" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700">
               Richieste salvate per l'operatore selezionato
@@ -196,7 +192,6 @@
             <div id="operator-requests-list" class="space-y-2"></div>
           </div>
 
-          <!-- STEP 2: GIORNO + TUTTO IL GIORNO / ORARIO IN PARTICOLARE (APPARE DOPO AVER SCELTO L'OPERATORE) -->
           <form id="operator-request-form" class="hidden pt-5 border-t border-slate-200 space-y-5">
             <input type="hidden" id="editing-request-id" value="" />
 
@@ -210,7 +205,6 @@
             <div id="form-feedback-error" class="hidden p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-              <!-- Giorno / Data -->
               <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                 <div class="flex items-center justify-between gap-2 flex-wrap">
                   <label for="input-req-date" class="text-xs font-extrabold uppercase tracking-wider text-slate-700">
@@ -245,7 +239,6 @@
                 <p id="date-week-preview" class="text-xs font-semibold text-slate-600 bg-white px-3 py-2 rounded-xl border border-slate-200"></p>
               </div>
 
-              <!-- Scelta Tutto il giorno vs Orario in particolare -->
               <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                 <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-700">
                   Copertura Giornaliera / Orario *
@@ -279,7 +272,6 @@
                   </button>
                 </div>
 
-                <!-- Tipologia (sempre accessibile o chiara per Tutto il giorno / Orario in particolare) -->
                 <div class="pt-1">
                   <label for="select-request-type" class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
                     Tipologia Richiesta
@@ -294,7 +286,6 @@
                   </select>
                 </div>
 
-                <!-- Box Dalle / Alle visibile quando si sceglie 'Orario in particolare' -->
                 <div id="specific-time-box" class="hidden pt-2.5 space-y-3 border-t border-slate-200">
                   <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -330,7 +321,6 @@
               </div>
             </div>
 
-            <!-- Note opzionali + Pulsante Grande Invia Richiesta -->
             <div class="space-y-3 pt-1">
               <div>
                 <label for="input-req-note" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
@@ -361,7 +351,6 @@
     <!-- 3. IN BASSO — CALENDARIO PRIVATO DEL RESPONSABILE (PROTETTO DA PIN)  -->
     <!-- =================================================================== -->
     <section id="private-calendar-section" class="print-card bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-      <!-- Schermata Bloccata all'avvio -->
       <div id="calendar-locked-screen" class="no-print p-8 sm:p-10 text-center bg-gradient-to-b from-slate-900 to-slate-800 text-white">
         <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-2xl mx-auto mb-3">
           🔒
@@ -397,7 +386,6 @@
         </p>
       </div>
 
-      <!-- Schermata Sbloccata -->
       <div id="calendar-unlocked-screen" class="hidden">
         <div class="no-print px-4 sm:px-5 py-4 bg-slate-900 text-white flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-2.5">
@@ -451,7 +439,6 @@
           </div>
         </div>
 
-        <!-- Pannello Cambio PIN -->
         <div id="change-pin-box" class="no-print hidden px-4 sm:px-5 py-3 bg-indigo-950 text-white border-b border-indigo-800 flex flex-wrap items-center justify-between gap-3">
           <span class="text-xs font-bold text-indigo-200">Nuovo PIN numerico (4-8 cifre):</span>
           <div class="flex items-center gap-2">
@@ -480,7 +467,6 @@
           </div>
         </div>
 
-        <!-- Navigazione Settimane (Week) -->
         <div class="p-4 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
           <div class="flex flex-wrap items-center gap-2">
             <div class="no-print inline-flex items-center bg-white p-1 rounded-xl border border-slate-200 shadow-2xs">
@@ -506,7 +492,6 @@
           <div id="cal-kpi-summary" class="flex flex-wrap items-center gap-2 text-xs"></div>
         </div>
 
-        <!-- Griglia Settimanale -->
         <div class="overflow-x-auto custom-scrollbar">
           <table class="ods-table w-full border-collapse min-w-[920px]">
             <thead id="cal-thead"></thead>
@@ -514,7 +499,6 @@
           </table>
         </div>
 
-        <!-- Dettaglio Richieste Settimana -->
         <div class="no-print border-t border-slate-200">
           <div class="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
             <h3 class="text-xs sm:text-sm font-extrabold text-slate-800">
@@ -551,6 +535,7 @@
         { id: 'op-12', name: 'Urbano Spinelli Emanuele Lorenzo', role: 'Addetto Vendita', shortRole: 'Addetto Vendita', initials: 'US', badge: 'bg-slate-100 text-slate-700 border-slate-200' }
       ].sort((a, b) => a.name.localeCompare(b.name, 'it', { sensitivity: 'base' }));
 
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzs_wvETbOCCjAO1c4jnOX89VFE0BNuQm9NM7ID3BusiWea4YDpvHXZw9JN9BWbssGU/exec';
       const DEFAULT_PIN = '1234';
       const PIN_KEY = 'tiger_it338_pin_v1';
       const REQUESTS_KEY = 'tiger_it338_requests_v1';
@@ -635,18 +620,49 @@
       }
 
       // =====================================================================
-      // 3. STATO APPLICAZIONE (PARTE SEMPRE SENZA RICHIESTE PRE-CARICATE)
+      // 3. STATO APPLICAZIONE & SINCRONIZZAZIONE GOOGLE SHEETS
       // =====================================================================
       const state = {
-        mode: null,               // null | 'NEW' | 'EDIT' | 'DELETE'
-        selectedOperatorId: null, // null finché non si clicca un operatore
-        selectedRequestId: null,  // id richiesta in modifica
+        mode: null,
+        selectedOperatorId: null,
+        selectedRequestId: null,
         isCalendarUnlocked: false,
         currentMonday: getMondayOfWeek(new Date()),
         requests: []
       };
 
-      function loadRequests() {
+      function getOperatorNameById(opId) {
+        const op = TEAM_MEMBERS.find((m) => m.id === opId);
+        return op ? op.name : opId;
+      }
+
+      function getOperatorIdByName(name) {
+        const op = TEAM_MEMBERS.find((m) => m.name.toLowerCase() === String(name || '').trim().toLowerCase());
+        return op ? op.id : null;
+      }
+
+      function mapTypeToSheet(type) {
+        if (type === 'FULL_DAY_OFF') return 'Tutto il giorno';
+        if (type === 'PREFERENCE') return 'Preferenza turno';
+        return 'Orario in particolare';
+      }
+
+      function mapTypeFromSheet(tipo) {
+        const t = String(tipo || '').toLowerCase();
+        if (t.includes('tutto il giorno') || t.includes('riposo') || t.includes('ferie')) return 'FULL_DAY_OFF';
+        if (t.includes('preferenza')) return 'PREFERENCE';
+        return 'TIME_BLOCK';
+      }
+
+      function saveRequestsLocal() {
+        try {
+          localStorage.setItem(REQUESTS_KEY, JSON.stringify(state.requests));
+        } catch (err) {
+          console.error('Errore salvataggio locale:', err);
+        }
+      }
+
+      function loadRequestsLocal() {
         try {
           const raw = localStorage.getItem(REQUESTS_KEY);
           if (raw) {
@@ -657,16 +673,91 @@
             }
           }
         } catch (err) {
-          console.error('Errore caricamento richieste:', err);
+          console.error('Errore caricamento locale:', err);
         }
         state.requests = [];
       }
 
-      function saveRequests() {
+      async function syncActionToSheet(action, payload) {
+        if (!GOOGLE_SCRIPT_URL) return;
         try {
-          localStorage.setItem(REQUESTS_KEY, JSON.stringify(state.requests));
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action, ...payload })
+          });
         } catch (err) {
-          console.error('Errore salvataggio richieste:', err);
+          console.warn('Errore invio a Google Apps Script:', err);
+        }
+      }
+
+      function saveRequests(actionInfo = null) {
+        saveRequestsLocal();
+        if (!actionInfo || !GOOGLE_SCRIPT_URL) return;
+
+        if (actionInfo.type === 'ADD' && Array.isArray(actionInfo.items)) {
+          actionInfo.items.forEach((req) => {
+            syncActionToSheet('add', {
+              id: req.id,
+              operatore: getOperatorNameById(req.operatorId),
+              data: req.date,
+              tipo: mapTypeToSheet(req.type),
+              dalle: req.startTime || '',
+              alle: req.endTime || '',
+              note: req.note || ''
+            });
+          });
+        } else if (actionInfo.type === 'UPDATE' && actionInfo.item) {
+          const req = actionInfo.item;
+          syncActionToSheet('update', {
+            id: req.id,
+            operatore: getOperatorNameById(req.operatorId),
+            data: req.date,
+            tipo: mapTypeToSheet(req.type),
+            dalle: req.startTime || '',
+            alle: req.endTime || '',
+            note: req.note || ''
+          });
+        } else if (actionInfo.type === 'DELETE' && actionInfo.id) {
+          syncActionToSheet('delete', { id: actionInfo.id });
+        } else if (actionInfo.type === 'RESET') {
+          syncActionToSheet('reset', {});
+        }
+      }
+
+      async function loadRequests() {
+        loadRequestsLocal();
+        if (!GOOGLE_SCRIPT_URL) return;
+
+        try {
+          const res = await fetch(GOOGLE_SCRIPT_URL);
+          if (!res.ok) return;
+          const rows = await res.json();
+          const list = Array.isArray(rows) ? rows : (Array.isArray(rows.data) ? rows.data : []);
+          if (!list.length) return;
+
+          const mapped = list
+            .filter((r) => r && (r.operatore || r.operatorId) && r.data)
+            .map((r, idx) => {
+              const opId = r.operatorId || getOperatorIdByName(r.operatore) || 'op-1';
+              return {
+                id: String(r.id || `sheet-${idx}`),
+                operatorId: opId,
+                date: String(r.data).slice(0, 10),
+                type: mapTypeFromSheet(r.tipo),
+                startTime: r.dalle ? String(r.dalle) : '',
+                endTime: r.alle ? String(r.alle) : '',
+                note: r.note ? String(r.note) : '',
+                status: 'PENDING'
+              };
+            });
+
+          state.requests = mapped;
+          saveRequestsLocal();
+          renderAll();
+        } catch (err) {
+          console.warn('Lettura da Google Foglio non riuscita, uso cache locale:', err);
         }
       }
 
@@ -1096,20 +1187,20 @@
                   class="px-2 py-1 rounded-lg border text-left transition hover:brightness-95 cursor-pointer ${colorCls}"
                   title="${escapeHTML(labelTxt)}${req.note ? ' - ' + escapeHTML(req.note) : ''}"
                 >
-                  <div class="flex items-center justify-between gap-1">
-                    <span class="text-[10px] font-extrabold tracking-tight">${escapeHTML(labelTxt)}</span>
+                  <div class="flex items-center justify-between gap-1 text-[10px] font-extrabold leading-tight">
+                    <span class="truncate">${escapeHTML(labelTxt)}</span>
                     ${statusBadge}
                   </div>
-                  ${req.note ? `<div class="text-[10px] opacity-85 truncate mt-0.5">${escapeHTML(req.note)}</div>` : ''}
+                  ${req.note ? `<div class="text-[10px] opacity-80 truncate mt-0.5">${escapeHTML(req.note)}</div>` : ''}
                 </div>
               `;
             }).join('');
 
             return `
-              <td class="p-1.5 align-top border-r border-slate-200 last:border-r-0 h-[66px] ${
-                day.isToday ? 'bg-indigo-50/30' : ''
+              <td class="p-1.5 align-top border-r border-slate-200 last:border-r-0 ${
+                day.isToday ? 'bg-indigo-50/40' : day.isWeekend ? 'bg-slate-50/70' : ''
               }">
-                <div class="flex flex-col gap-1 min-h-[52px]">${cards}</div>
+                <div class="space-y-1 min-h-[38px]">${cards}</div>
               </td>
             `;
           }).join('');
@@ -1244,7 +1335,6 @@
       // 8. EVENTI APPLICAZIONE
       // =====================================================================
       function bindEvents() {
-        // 3 Tasti in alto
         document.querySelectorAll('.mode-switch-btn').forEach((btn) => {
           btn.addEventListener('click', () => {
             const clickedMode = btn.dataset.mode;
@@ -1260,12 +1350,10 @@
           });
         });
 
-        // Nascondi / Chiudi
         document.getElementById('btn-hide-workspace').addEventListener('click', () => {
           hideWorkspaceCompletely();
         });
 
-        // Selezione Operatore -> mostra data e orario (o richieste salvate in Modifica/Cancella)
         document.getElementById('operators-grid').addEventListener('click', (e) => {
           const opBtn = e.target.closest('.operator-select-btn');
           if (!opBtn) return;
@@ -1276,7 +1364,6 @@
           renderAll();
         });
 
-        // Azioni sulle richieste salvate in Modifica / Cancella
         document.getElementById('operator-requests-list').addEventListener('click', (e) => {
           const editBtn = e.target.closest('[data-edit-req-id]');
           if (editBtn) {
@@ -1293,13 +1380,12 @@
             const id = delBtn.dataset.delReqId;
             state.requests = state.requests.filter((r) => r.id !== id);
             if (state.selectedRequestId === id) state.selectedRequestId = null;
-            saveRequests();
+            saveRequests({ type: 'DELETE', id });
             renderAll();
             showToast('Richiesta cancellata.');
           }
         });
 
-        // Data e Intervallo Dal / Al
         const dateInput = document.getElementById('input-req-date');
         const endDateInput = document.getElementById('input-req-end-date');
         const multiCheck = document.getElementById('checkbox-multi-day');
@@ -1328,14 +1414,12 @@
           }
         });
 
-        // Bottoni 'Tutto il giorno' vs 'Orario in particolare'
         document.querySelectorAll('.scope-choice-btn').forEach((btn) => {
           btn.addEventListener('click', () => {
             setAvailabilityScope(btn.dataset.scope);
           });
         });
 
-        // Sincronizzazione select tipologia con box orario
         document.getElementById('select-request-type').addEventListener('change', (e) => {
           if (e.target.value === 'FULL_DAY_OFF') {
             setAvailabilityScope('FULL_DAY');
@@ -1344,7 +1428,6 @@
           }
         });
 
-        // Fasce orarie rapide
         document.querySelectorAll('.preset-time-btn').forEach((btn) => {
           btn.addEventListener('click', () => {
             setAvailabilityScope('SPECIFIC_TIME');
@@ -1353,7 +1436,6 @@
           });
         });
 
-        // Invio Form Richiesta
         document.getElementById('operator-request-form').addEventListener('submit', (e) => {
           e.preventDefault();
           const errBox = document.getElementById('form-feedback-error');
@@ -1391,20 +1473,21 @@
           }
 
           if (state.mode === 'EDIT' && state.selectedRequestId) {
-            state.requests = state.requests.map((r) =>
-              r.id === state.selectedRequestId
-                ? {
-                    ...r,
-                    operatorId: state.selectedOperatorId,
-                    date: dateVal,
-                    type: finalType,
-                    startTime: finalType === 'FULL_DAY_OFF' ? '' : startTime,
-                    endTime: finalType === 'FULL_DAY_OFF' ? '' : endTime,
-                    note
-                  }
-                : r
-            );
-            saveRequests();
+            let updatedItem = null;
+            state.requests = state.requests.map((r) => {
+              if (r.id !== state.selectedRequestId) return r;
+              updatedItem = {
+                ...r,
+                operatorId: state.selectedOperatorId,
+                date: dateVal,
+                type: finalType,
+                startTime: finalType === 'FULL_DAY_OFF' ? '' : startTime,
+                endTime: finalType === 'FULL_DAY_OFF' ? '' : endTime,
+                note
+              };
+              return updatedItem;
+            });
+            saveRequests({ type: 'UPDATE', item: updatedItem });
             renderAll();
             showToast('Richiesta modificata.');
             return;
@@ -1435,12 +1518,11 @@
 
           state.requests.push(...newEntries);
           state.currentMonday = getMondayOfWeek(parseDateISO(datesToAdd[0]));
-          saveRequests();
+          saveRequests({ type: 'ADD', items: newEntries });
           hideWorkspaceCompletely();
           showToast('Richiesta inviata al calendario privato.');
         });
 
-        // Sblocco Calendario Privato con PIN
         document.getElementById('unlock-pin-form').addEventListener('submit', (e) => {
           e.preventDefault();
           const pinVal = document.getElementById('input-admin-pin').value.trim();
@@ -1456,7 +1538,6 @@
           }
         });
 
-        // Cambio PIN
         document.getElementById('btn-change-pin').addEventListener('click', () => {
           document.getElementById('change-pin-box').classList.toggle('hidden');
           document.getElementById('input-new-pin').focus();
@@ -1479,7 +1560,6 @@
           showToast('PIN aggiornato.');
         });
 
-        // Blocca Calendario
         document.getElementById('btn-lock-calendar').addEventListener('click', () => {
           state.isCalendarUnlocked = false;
           renderPrivateCalendar();
@@ -1497,7 +1577,6 @@
           }
         });
 
-        // Navigazione Week
         document.getElementById('btn-prev-week').addEventListener('click', () => {
           state.currentMonday = addDays(state.currentMonday, -7);
           renderPrivateCalendar();
@@ -1517,18 +1596,16 @@
           }
         });
 
-        // CSV, Stampa, Azzera Dati
         document.getElementById('btn-export-csv').addEventListener('click', exportWeekCSV);
         document.getElementById('btn-print-ods').addEventListener('click', () => window.print());
         document.getElementById('btn-reset-data').addEventListener('click', () => {
           state.requests = [];
           state.selectedRequestId = null;
-          saveRequests();
+          saveRequests({ type: 'RESET' });
           renderAll();
           showToast('Tutti i dati delle richieste sono stati azzerati.');
         });
 
-        // Click su una richiesta nel calendario per modificarla
         document.getElementById('cal-tbody').addEventListener('click', (e) => {
           const card = e.target.closest('[data-cal-edit-id]');
           if (!card) return;
@@ -1542,7 +1619,6 @@
           }
         });
 
-        // Conferma o elimina richiesta dalla lista settimanale
         document.getElementById('cal-week-details-list').addEventListener('click', (e) => {
           const appBtn = e.target.closest('[data-admin-approve]');
           if (appBtn) {
@@ -1550,7 +1626,7 @@
             state.requests = state.requests.map((r) =>
               r.id === id ? { ...r, status: r.status === 'APPROVED' ? 'PENDING' : 'APPROVED' } : r
             );
-            saveRequests();
+            saveRequestsLocal();
             renderPrivateCalendar();
             showToast('Stato aggiornato.');
             return;
@@ -1561,7 +1637,7 @@
             const id = delBtn.dataset.adminDelete;
             state.requests = state.requests.filter((r) => r.id !== id);
             if (state.selectedRequestId === id) state.selectedRequestId = null;
-            saveRequests();
+            saveRequests({ type: 'DELETE', id });
             renderAll();
             showToast('Richiesta eliminata.');
           }
@@ -1569,10 +1645,10 @@
       }
 
       // Avvio
-      loadRequests();
       resetFormFields();
       bindEvents();
       renderAll();
+      loadRequests();
     })();
   </script>
 </body>
